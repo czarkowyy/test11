@@ -150,7 +150,27 @@
                 let diff = startTouch - endTouch; // Oblicza różnicę między startem a końcem dotyku
                 window.scrollBy(0, diff); // Przewija stronę o tę różnicę
                 startTouch = endTouch; // Ustawia nowy początkowy punkt dotyku
-                const scrollSpeed = 1.9;  // Współczynnik spowolnienia przewijania
+                  // Obsługuje przewijanie strony na urządzeniu dotykowym
+  let startTouch = 0;
+  let endTouch = 0;
+  let lastDiff = 0;  // Zmienna do przechowywania ostatniej różnicy
+  const scrollSpeed = 0.2;  // Współczynnik spowolnienia przewijania
+
+  document.body.addEventListener('touchstart', function(e) {
+    startTouch = e.touches[0].pageY; // Zapisuje początkowy punkt dotyku
+  });
+
+  document.body.addEventListener('touchmove', function(e) {
+    endTouch = e.touches[0].pageY; // Zapisuje końcowy punkt dotyku
+    let diff = startTouch - endTouch; // Oblicza różnicę między startem a końcem dotyku
+
+    // Płynniejsze przewijanie przez wygładzanie różnicy i spowolnienie
+    let smoothDiff = (diff - lastDiff) * scrollSpeed; // Zmniejsza szybkość przewijania
+    window.scrollBy(0, smoothDiff); // Przewija stronę o tę różnicę
+
+    startTouch = endTouch; // Ustawia nowy początkowy punkt dotyku
+    lastDiff = smoothDiff; // Zapisuje ostatnią różnicę dla wygładzania
+  });
             });
         </script>
     
