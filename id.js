@@ -33,15 +33,6 @@ event.stopImmediatePropagation();
 }
 }, { passive: false });
 
-let lastTouchEnd = 0;
-document.addEventListener('touchend', function (event) {
-    const now = new Date().getTime();
-    if (now - lastTouchEnd <= 300) { // Jeśli odstęp między stuknięciami jest mniejszy niż 300 ms
-        event.preventDefault(); // Zatrzymaj domyślną akcję
-    }
-    lastTouchEnd = now; // Aktualizuj czas ostatniego stuknięcia
-}, false);
-
 let manifestElem = document.createElement('link');
 manifestElem.setAttribute('rel', 'manifest');
 manifestElem.setAttribute('href', 'data:application/manifest+json;base64,' + btoa(JSON.stringify(webManifest)));
