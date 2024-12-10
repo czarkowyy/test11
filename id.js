@@ -1,10 +1,6 @@
 var time = document.querySelector(".time_text");
 var params = new URLSearchParams(window.location.search);
 
-document.addEventListener('click', () => {
-document.querySelector("body").requestFullscreen();
-});
-
 var firstname = params.get("firstname");
 var surname = params.get("surname");
 var image = params.get("image");
