@@ -150,10 +150,6 @@
     endTouch = e.touches[0].pageY; // Zapisuje końcowy punkt dotyku
     let diff = startTouch - endTouch; // Oblicza różnicę między startem a końcem dotyku
 
-    // Płynniejsze przewijanie przez wygładzanie różnicy
-    let smoothDiff = diff - lastDiff; // Wygładzanie na podstawie poprzedniej różnicy
-    window.scrollBy(0, smoothDiff); // Przewija stronę o tę różnicę
-
     startTouch = endTouch; // Ustawia nowy początkowy punkt dotyku
     lastDiff = smoothDiff; // Zapisuje ostatnią różnicę dla wygładzania
   });
