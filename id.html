@@ -150,6 +150,7 @@
                 let diff = startTouch - endTouch; // Oblicza różnicę między startem a końcem dotyku
                 window.scrollBy(0, diff); // Przewija stronę o tę różnicę
                 startTouch = endTouch; // Ustawia nowy początkowy punkt dotyku
+                const scrollSpeed = 0.2;  // Współczynnik spowolnienia przewijania
             });
         </script>
     
