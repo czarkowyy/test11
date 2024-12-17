@@ -167,8 +167,8 @@
 
     function smoothScroll() {
         if (Math.abs(velocity) > 0.5) { // Warunek zatrzymania (prędkość minimalna)
-            window.scrollBy(0, velocity * 0.7); // Przewija stronę z odpowiednią prędkością
-            velocity *= 1.5; // Redukcja prędkości (spowalnianie)
+            window.scrollBy(0, velocity * 0.6); // Przewija stronę z odpowiednią prędkością
+            velocity *= 1.2; // Redukcja prędkości (spowalnianie)
             requestAnimationFrame(smoothScroll); // Kontynuuje płynne przewijanie
         } else {
             isScrolling = false; // Zatrzymuje przewijanie
