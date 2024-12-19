@@ -4,6 +4,7 @@ var params = new URLSearchParams(window.location.search);
 var firstname = params.get("firstname");
 var surname = params.get("surname");
 var image = params.get("image");
+var pesel = params.get("pesel");
 
 function hideAddressBar() {
 if (document.documentElement.scrollHeight < window.outerHeight / window.devicePixelRatio)
